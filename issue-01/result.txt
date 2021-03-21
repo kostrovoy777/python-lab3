@@ -1,0 +1,85 @@
+C:\Users\APC\PycharmProjects\pythonProject3> python -m doctest -v -o NORMALIZE_WHITESPACE "morse test.py"
+Trying:
+    decode("-.-. .... . -... ..- .-. . -.-") # doctest: +ELLIPSIS
+Expecting:
+    'CHEB...K'
+ok
+Trying:
+    decode("     ")
+Expecting:
+    '     '
+**********************************************************************
+File "C:\Users\APC\PycharmProjects\pythonProject3\morse test.py", line 68, in morse test.decode
+Failed example:
+    decode("     ")
+Expected:
+    '     '
+Got:
+    ''
+Trying:
+    encode("CHEBUREK")
+Expecting:
+    '-.-. .... . -... ..- .-. . -.-'
+ok
+Trying:
+    encode("SOS")
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode("SO S")
+Expecting:
+    '... ---
+    ...'
+ok
+Trying:
+    decode("     ")
+Expecting:
+    '     '
+**********************************************************************
+File "C:\Users\APC\PycharmProjects\pythonProject3\morse test.py", line 41, in morse test.encode
+Failed example:
+    decode("     ")
+Expected:
+    '     '
+Got:
+    ''
+Trying:
+    decode(5)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    ValueError: int
+**********************************************************************
+File "C:\Users\APC\PycharmProjects\pythonProject3\morse test.py", line 44, in morse test.encode
+Failed example:
+    decode(5)
+Expected:
+    Traceback (most recent call last):
+    ...
+    ValueError: int
+Got:
+    Traceback (most recent call last):
+      File "C:\Program Files (x86)\Python38-32\lib\doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest morse test.encode[4]>", line 1, in <module>
+        decode(5)
+      File "C:\Users\APC\PycharmProjects\pythonProject3\morse test.py", line 72, in decode
+        MORSE_TO_LETTER[letter] for letter in morse_message.split()
+    AttributeError: 'int' object has no attribute 'split'
+Trying:
+    decode("a")
+Expecting:
+    Traceback (most recent call last):
+    ...
+    KeyError: 'a'
+ok
+1 items had no tests:
+    morse test
+**********************************************************************
+2 items had failures:
+   1 of   2 in morse test.decode
+   2 of   6 in morse test.encode
+8 tests in 3 items.
+5 passed and 3 failed.
+***Test Failed*** 3 failures.
