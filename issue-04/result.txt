@@ -1,0 +1,16 @@
+C:\Users\APC\PycharmProjects\pythonProject3>pytest -v test4.py
+========================================================================================================= test session starts =========================================================================================================
+platform win32 -- Python 3.8.6, pytest-6.2.2, py-1.10.0, pluggy-0.13.1 -- c:\program files (x86)\python38-32\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\APC\PycharmProjects\pythonProject3
+collected 5 items                                                                                                                                                                                                                      
+
+test4.py::test_1 PASSED                                                                                                                                                                                                          [ 20%]
+test4.py::test_empty PASSED                                                                                                                                                                                                      [ 40%]
+test4.py::test_not_in PASSED                                                                                                                                                                                                     [ 60%]
+test4.py::test_in PASSED                                                                                                                                                                                                         [ 80%]
+test4.py::test_exept PASSED                                                                                                                                                                                                      [100%]
+
+========================================================================================================== 5 passed in 0.08s ==========================================================================================================
+
+C:\Users\APC\PycharmProjects\pythonProject3>
