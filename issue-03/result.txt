@@ -1,0 +1,35 @@
+"C:\Program Files (x86)\Python38-32\python.exe" C:/Users/APC/PycharmProjects/pythonProject3/test.py
+F..E.
+======================================================================
+ERROR: test_no_arg (__main__.TestFT)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/APC/PycharmProjects/pythonProject3/test.py", line 16, in test_no_arg
+    actual = fit_transform()
+  File "C:/Users/APC/PycharmProjects/pythonProject3/test.py", line 34, in fit_transform
+    raise TypeError('expected at least 1 arguments, got 0')
+TypeError: expected at least 1 arguments, got 0
+
+======================================================================
+FAIL: test_1 (__main__.TestFT)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/APC/PycharmProjects/pythonProject3/test.py", line 9, in test_1
+    self.assertEqual(actual, expected)
+AssertionError: Lists differ: [('Mask', [1])] != [('Mask', [0, 0, 1])]
+
+First differing element 0:
+('Mask', [1])
+('Mask', [0, 0, 1])
+
+- [('Mask', [1])]
++ [('Mask', [0, 0, 1])]
+?            ++++++
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=1, errors=1)
+
+Process finished with exit code 1
