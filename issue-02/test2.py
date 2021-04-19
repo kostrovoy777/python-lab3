@@ -47,7 +47,7 @@ def decode(morse_message: str) -> str:
     return ''.join(decoded_letters)
 
 
-@pytest.mark.parametrize("test_input,expected", [("-.- . -.-", "KEK"), ("... --- ...", "SOS"),
-                                                 (".-.. --- .-..", "LOL")])
+@pytest.mark.parametrize("test_input,expected", [("-.- . -.-", "KEK"), ("", ""),
+                                                 ("a", KeyError)])
 def test_decode(test_input, expected):
     assert decode(test_input) == expected
