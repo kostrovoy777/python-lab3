@@ -26,25 +26,24 @@ def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
 
 
 def test_1():
-    assert fit_transform("Mask") == [('Mask', [1])]
+    assert fit_transform("Mask") == [("Mask", [1])]
+
+
+def test_empty_str():
+    assert fit_transform("") == [("", [1])]
+
+
+def test_int():
+    with pytest.raises(TypeError):
+        fit_transform(2)
 
 
 def test_empty():
-    assert fit_transform("") != ""
-
-
-def test_not_in():
-    assert fit_transform("Borsch") not in [('Mask', [1])]
-
-
-def test_in():
-    assert fit_transform('Moscow') in [
-        [('Moscow', [0])],
-        [('Moscow', [1])],
-        [('Moscow', [0, 0, 1])],
-    ]
-
-
-def test_exept():
     with pytest.raises(TypeError):
-        fit_transform(5)
+        fit_transform()
+
+
+def test_two_args():
+    assert fit_transform("Moscow", "Piter") == [('Moscow', [0, 1]), ('Piter', [1, 0])]
+
+
