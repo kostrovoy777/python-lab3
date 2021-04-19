@@ -5,24 +5,26 @@ import unittest
 class TestFT(unittest.TestCase):
     def test_1(self):
         actual = fit_transform("Mask")
-        expected = [('Mask', [0, 0, 1])]
+        expected = [("Mask", [1])]
         self.assertEqual(actual, expected)
 
     def test_empty_str(self):
         actual = fit_transform("")
-        self.assertIsNot(actual, "")
+        expected = [("", [1])]
+        self.assertEqual(actual, expected)
 
-    def test_no_arg(self):
-        actual = fit_transform()
-        self.assertIsNone(actual)
-
-    def test_space(self):
-        actual = fit_transform(" ")
-        self.assertIsNotNone(actual)
-
-    def test_exept(self):
+    def test_int(self):
         with self.assertRaises(TypeError):
             fit_transform(2)
+
+    def test_empty(self):
+        with self.assertRaises(TypeError):
+            fit_transform()
+
+    def test_two_arg(self):
+        actual = fit_transform("Mask", "Ilon")
+        expected = [('Mask', [0, 1]), ('Ilon', [1, 0])]
+        self.assertEqual(actual, expected)
 
 
 def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
